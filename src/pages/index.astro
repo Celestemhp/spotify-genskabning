@@ -1,29 +1,21 @@
 ---
 // Importer components her
-  import Button from "../components/Button.astro";
-//   import Header from "../components/Header.astro";
-  import Footer from "../components/Footer.astro";
+  import MainLayout from "../layouts/MainLayout.astro";
   import Card from "../components/Card.astro";
+  import Button from "../components/Button.astro";
+  import Navigation from "../components/Navigation.astro";
+  import "../styles/tokens.css";
   import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<!-- <Header/> -->
-		<Button variant="primary" size="medium"/>
-		<Button variant="secondary" size="medium"/>
+<MainLayout title="hjem">
+	<Navigation/>
 
-		<main>
-			<!-- Det er attributter eks. header i card men astro kalder det props -->
-			<Card sang="Lalala" text="Lorem" />
-			<img src="" alt=""><Card/>
-		</main>
-	</body>
-</html>
+	<!-- Det er attributter eks. header i card men astro kalder det props -->
+	<Card sang="Lalala" text="Lorem" />
+	<img src="" alt=""><Card/>
+
+	<!-- <Header/> -->
+	<Button variant="primary" size="medium"/>
+	<Button variant="secondary" size="medium"/>
+</MainLayout>

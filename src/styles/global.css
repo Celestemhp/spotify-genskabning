@@ -1,6 +1,20 @@
 * {
     box-sizing: border-box;
+    background-color:black;
+    overflow: hidden;
 }
-img {
+img, svg {
     max-width: 100%;
+}
+
+h1, h2, h3, h4 {
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+p {
+    color: var(--text-muted);
+}
+svg {
+    color: var(--text-white);
+    fill: "#b3b3b3";
 }
