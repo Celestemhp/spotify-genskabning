@@ -5,7 +5,8 @@ dist/
 
 # dependencies
 node_modules/
-
+# tilføj
+.vscode/
 # logs
 npm-debug.log*
 yarn-debug.log*
