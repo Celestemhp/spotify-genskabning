@@ -1,18 +1,49 @@
 ---
+import Button from "./Button.astro";
+
 /* Samler props op fra index */
- const sang = Astro.props.sang;
- const text = Astro.props.text; 
+const { title, body, imgPath } = Astro.props;
 
 //  Dette er det samme som ovenover, men bare med færre linjer 
 // const { sang } = Astro.props;
 ---
 
 <article>
-    <h2> {sang} </h2>
-    <!-- slot er ikke skrevet med Uppercase da det faktisk er et validt HTML tag -->
-    <slot/>
+    <h3> 
+        <a href="#0">{title}</a>
+    </h3>
+
 </article>
-
+<section>
+    
+<div class="card1">
+    <img src="public/spotify_images/peaceful_piano.jpeg" alt="Peaceful piano">
+    <h2>Peaceful piano</h2>
+    <p>Relax and indulge with beautiful piano</p>
+</div>
+<div class="card2">
+    <img src="public/spotify_images/deep_focus.jpeg" alt="Deep focus piano">
+    <h2>Deep focus</h2>
+    <p>Keep calm and focus with ambient and post-rock</p>
+</div>
+</section>
 <style>
-
+    section {
+        display: flex;
+        gap: 50px;
+        background-color: var(--surface-light);
+        padding: 20px;
+    }
+    .card1, .card2 {
+        max-width: 190px;
+        background-color: transparent;
+    }
+    h3 {
+        font-size: var(--font-size-base);
+        background-color: transparent;
+        margin-bottom: var(--space-xxxs);
+    }
+    p {
+        background-color: transparent;
+    }
 </style>

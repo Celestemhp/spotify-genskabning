@@ -127,7 +127,7 @@ import Button from "./Button.astro";
         </div>
     </section>
 
-    <section class="nav_top">
+    <!-- <section class="nav_top">
         <div class="pile">
             <svg
     role="img"
@@ -162,10 +162,11 @@ import Button from "./Button.astro";
                 <h2>Premium</h2>
                 <h2>Support</h2>
                 <h2>Download</h2>
-
+                <div class="streg"></div>
                 <h2>Tilmeld dig</h2>
+                <Button variant="primary" size="large" text="Log på"/>
             </div>
-    </section>
+    </section> -->
 
 </header>
 <style>
@@ -258,23 +259,36 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     gap: 20px;
     height: 64px;
     width: 899px;
+    background-color: var(--surface-default);
   }
   .pile {
     display: flex;
     gap: 15px;
+    background-color: var(--surface-default);
+    margin-left: 5px;
   }
   .links_top {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    align-items: center;
+    background-color: var(--surface-default);
+
   }
   .links_top h2 {
     color: var(--text-muted);
     font-size: 16px;
     line-height: 18px;
     letter-spacing: 1.76px;
+  }
+  .links_top .streg {
+    background: #fff;
+    height: 25px;
+    margin: 16px;
+    width: 1px;
   }
 </style>

@@ -1,0 +1,149 @@
+---
+import Card from "./Card.astro";
+import Button from "./Button.astro";
+
+
+const { title } = Astro.props;
+---
+<!-- <section class="nav_top">
+    <div class="pile">
+        <svg
+        role="img"
+        height="16"
+        width="16"
+        aria-hidden="true"
+        viewBox="0 0 16 16"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="#b3b3b3"
+        {...Astro.props}
+        ><path
+            d="M11.03.47a.75.75 0 0 1 0 1.06L4.56 8l6.47 6.47a.75.75 0 1 1-1.06 1.06L2.44 8 9.97.47a.75.75 0 0 1 1.06 0z"
+        ></path></svg
+        >
+        <svg
+        role="img"
+        height="16"
+        width="16"
+        aria-hidden="true"
+        class="Svg-sc-ytk21e-0 kcBZLg IYDlXmBmmUKHveMzIPCF"
+        viewBox="0 0 16 16"
+        data-encore-id="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="#b3b3b3"
+        {...Astro.props}
+        ><path
+            d="M4.97.47a.75.75 0 0 0 0 1.06L11.44 8l-6.47 6.47a.75.75 0 1 0 1.06 1.06L13.56 8 6.03.47a.75.75 0 0 0-1.06 0z"
+        ></path></svg
+        >
+    </div>
+    <div class="links_top">
+            <h2>Premium</h2>
+            <h2>Support</h2>
+            <h2>Download</h2>
+            <div class="streg"></div>
+            <h2>Tilmeld dig</h2>
+            <Button variant="primary" size="large" text="Log på"/>
+        </div>
+</section> -->
+
+<section>
+    <header class="card_overview">
+        <div class="title">
+            <h1>
+                <a href="#0">{title}</a>
+            </h1>
+            <p>
+                <a href="#0">Vis alle</a>
+            </p>
+        </div>
+        <ul class="container_playlister">
+                <!-- slot er ikke skrevet med Uppercase da det faktisk er et validt HTML tag -->
+            <slot />
+        </ul>
+    </header>
+</section>
+
+<style>
+      /* .nav_top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: 64px;
+    width: 899px;
+    background-color: var(--surface-default);
+  }
+  .pile {
+    display: flex;
+    gap: 15px;
+    background-color: var(--surface-default);
+    margin-left: 5px;
+  }
+  .links_top {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    background-color: var(--surface-default);
+
+  }
+  .links_top h2 {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 1.76px;
+  }
+  .links_top .streg {
+    background: #fff;
+    height: 25px;
+    margin: 16px;
+    width: 1px;
+  }
+ */
+
+    section {
+        background-color: var(--surface-light);
+        padding-top: 24px;
+        max-width: 1955px;
+    }
+    header {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        margin-bottom: 16px;
+        position: relative;
+    }
+    header .title h1 a {
+        color: var(--text-white);
+        font-size: var(--font-size-h2);
+        text-decoration: none;
+
+    }
+    header .title p a {
+        color: var(--text-muted);
+        text-decoration: none;
+    }
+    header .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header > a {
+    font-size: var(--font-size-small);
+    font-weight: 500;
+  }
+  header a:hover {
+    text-decoration: underline;
+  }
+  .container_playlister {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+
+    /* hide wrapping rows */
+    grid-template-rows: min-content;
+    grid-auto-rows: 0;
+    gap: 0 var(--space-lg);
+    overflow: hidden;
+  }
+</style>

@@ -1,22 +1,41 @@
 ---
+/* Front matter
 /* Samler props altså atributter op fra index
 /* const button = Astro.props.button; */
-const {variant, size} = Astro.props;
+const { variant = "primary", size = "medium" } = Astro.props;
 
 ---
 
 <!-- string concanation, bruger JS for at lime det sammen -->
-<button class={variant + " " + size}><slot/></button>
+<!-- <button class={variant + " " + size }><slot/></button> -->
 
+<button data-variant={variant} data-size={}>
+    <slot/>
+</button>
 
 
 <style>
+    /* Scoped styles- betyder at denne css ikke påvirker de andre komponenter */
     button {
         padding: 0.5rem;
-        border-radius: 8px;
+        border-radius: 50px;
     }
     .primary {
-        background-color: aquamarine;
+        background-color: white;
+        position: relative;
+        transform: scale(1.04);
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    .primary h2 {
+        color: black;
     }
     .secondary {
         background-color:coral;
